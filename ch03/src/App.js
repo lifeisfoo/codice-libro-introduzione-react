@@ -6,11 +6,20 @@ function AppTitle() {
 
 const defaultImage = "https://via.placeholder.com/32x32.png";
 
-function AppMessage({ user: { id, name, image = defaultImage } }) {
+function getImageOrDefaultURL(imageUrl) {
+  try {
+    new URL(imageUrl);
+    return imageUrl;
+  } catch {
+    return defaultImage;
+  }
+}
+
+function AppMessage({ user: { id, name, image } }) {
   return (
     <p>
       Benvenuto {name} ({id})!
-      <img src={image} width="32" height="32" />
+      <img src={getImageOrDefaultURL(image)} width="32" height="32" />
     </p>
   );
 }
