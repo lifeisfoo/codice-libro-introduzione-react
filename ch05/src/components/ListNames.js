@@ -10,7 +10,7 @@ function ListItem({ isSelected, name, count, onClick }) {
       }`}
       style={navLinkStyle}
     >
-      <ListIcon /> <span className="text-body ms-2">{name}</span>{" "}
+      <ListIcon /> <span className="text-body ms-2">{name}</span>
       <small className="text-black-50 fw-lighter ms-auto">{count}</small>
     </li>
   );
